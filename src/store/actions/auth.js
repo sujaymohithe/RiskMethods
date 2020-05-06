@@ -2,12 +2,14 @@ import axios from 'axios';
 import * as actionTypes from './actionTypes';
 import * as appConstants from '../../AppConstants';
 
+//login start
 export const authStart = () => {
     return {
         type: actionTypes.AUTH_START
     };
 };
 
+//login success
 export const authSuccess = (token, userId) => {
     return {
         type: actionTypes.AUTH_SUCCESS,
@@ -16,6 +18,7 @@ export const authSuccess = (token, userId) => {
     };
 };
 
+//login fail
 export const authFail = (error) => {
     return {
         type: actionTypes.AUTH_FAIL,
@@ -23,6 +26,7 @@ export const authFail = (error) => {
     };
 };
 
+//logout trigger
 export const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('refresh_token');
@@ -33,6 +37,7 @@ export const logout = () => {
     };
 };
 
+//When token expires, below method is used to fetch new token
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
         setTimeout(() => {
@@ -40,7 +45,7 @@ export const checkAuthTimeout = (expirationTime) => {
                 grant_type: 'refresh_token',
                 client_id: appConstants.CLIENT_ID,
                 client_secret: appConstants.CLIENT_SECRET,
-                refresh_token : localStorage.refresh_token
+                refresh_token: localStorage.refresh_token
             };
             let url = appConstants.AUTH_API_URL;
             axios.post(url, authData)
@@ -59,6 +64,7 @@ export const checkAuthTimeout = (expirationTime) => {
     };
 };
 
+//authentication method to create token and gain application accesss
 export const auth = (email, password) => {
     return dispatch => {
         dispatch(authStart());
@@ -72,7 +78,8 @@ export const auth = (email, password) => {
         let url = appConstants.AUTH_API_URL;
         axios.post(url, authData)
             .then(response => {
-                const expirationDate = new Date(new Date().getTime() + response.data.expires_in * 1000);
+                const expirationDate = new Date(new Date().getTime() +
+                    response.data.expires_in * 1000);
                 localStorage.setItem('token', response.data.access_token);
                 localStorage.setItem('refresh_token', response.data.refresh_token);
                 localStorage.setItem('expirationDate', expirationDate);
@@ -86,6 +93,7 @@ export const auth = (email, password) => {
     };
 };
 
+//Directs to Auth if not logged in 
 export const setAuthRedirectPath = (path) => {
     return {
         type: actionTypes.SET_AUTH_REDIRECT_PATH,
@@ -93,6 +101,8 @@ export const setAuthRedirectPath = (path) => {
     };
 };
 
+//If already logged in, check for token and navigate user to home page. 
+//Otherwise logout is triggered
 export const authCheckState = () => {
     return dispatch => {
         const token = localStorage.getItem('token');
@@ -105,7 +115,8 @@ export const authCheckState = () => {
             } else {
                 const userId = localStorage.getItem('userId');
                 dispatch(authSuccess(token, userId));
-                dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime()) / 1000));
+                dispatch(checkAuthTimeout((expirationDate.getTime() -
+                    new Date().getTime()) / 1000));
             }
         }
     };
