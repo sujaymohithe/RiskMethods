@@ -2,12 +2,10 @@ import React from 'react';
 import Enzyme, { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from "react-redux";
-import App from '../../App';
 import { store } from '../../store/store';
 import AuthContainer from './Auth';
 
 Enzyme.configure({ adapter: new Adapter() });
-
 
 describe('<Auth/> Container', () => {
     const wrapper = shallow(

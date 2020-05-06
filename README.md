@@ -45,6 +45,8 @@ React components read data from a Redux store, and dispatch actions to the store
 
 ### `react-bootstap and toastr`
 - react-bootstap is used as front-end framework for styling and layout.
+- Simple UI is designed as per the task assignment
+- Responsive UI using react-bootstrap is achieved
 - toastr is used for user notifications and messages.
 
 ### `SUPPORTED BROWSERS`

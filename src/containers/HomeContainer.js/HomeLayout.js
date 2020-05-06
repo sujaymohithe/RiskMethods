@@ -4,6 +4,7 @@ import IndicatorMessages from '../../components/IndicatorMessages/IndicatorMessa
 import './HomeLayout.css';
 
 const HomeLayout = props => {
+    //redirect to login if not authenticated
     if (!props.isAuthenticated) {
         props.history.push('/auth');
     }

@@ -36,7 +36,6 @@ export const logout = () => {
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
         setTimeout(() => {
-            // dispatch(logout());
             const authData = {
                 grant_type: 'refresh_token',
                 client_id: appConstants.CLIENT_ID,

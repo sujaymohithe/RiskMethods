@@ -83,7 +83,9 @@ const IndicatorMessages = props => {
         </>
     )
 }
-//export - making public to run test case
+
+// export - making public to run test case
+// method that copies part of the state to the props of this component.
 export const mapStateToProps = state => {
     return {
         indicatorMessagesList: state.indicatorMessage.messages,
@@ -92,6 +94,7 @@ export const mapStateToProps = state => {
     };
 };
 
+//these functions will be accessible via props in child components
 export const mapDispatchToProps = dispatch => {
     return {
         onInitIndicatorMessages: (page, isEventsChecked, fromRange, toRange) =>

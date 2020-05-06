@@ -17,24 +17,8 @@ const MainRouter = props => {
         </Switch>
     );
 
-    // if (props.isAuthenticated) {
-    //     routes = (
-    //         <Switch>
-    //             {/* <Route path="/logout" component={Logout} /> */}
-    //             <Route path="/auth" render={props => <Auth {...props} />} />
-    //             <Route path="/" exact render={props => <HomeLayout {...props} isAuthenticated="true"/>} />
-    //             <Route path="/indicator_messages/:id" render={props => <IndicatorMessageDetails {...props} />} />
-    //             <Redirect to="/" />
-    //         </Switch>
-    //     );
-    // }
-
     return (
         <BrowserRouter>
-            {/* <Switch>
-                <Route exact path="/" component={Auth} />
-                <Route path="/Login" component={Auth} />
-            </Switch> */}
             {routes}
         </BrowserRouter>
     )

@@ -10,8 +10,6 @@
         position: relative;
         padding: 30px;
         box-sizing: border-box;
-        /* flex: 0 0 33%;
-        max-width : 33%; */
     }
   }
 
@@ -31,12 +29,10 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    /* flex-direction: column; */
     min-width: 0;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    /* height: 200px; */
     margin: 10px;
 }
 
@@ -45,7 +41,6 @@
     float: left;
     border-right: 1px solid black;
     text-align: center;
-    /* height: 100%; */
 }
 
 .box-left .Cardblock h5{
@@ -55,7 +50,6 @@
 .box-right{
     width: 70%;
     float: left;
-    /* height: 100%; */
 }
 
 .Cardheader {
@@ -80,16 +74,13 @@
     margin: 5px;
     text-align: center;
     color: #fff;
-    /* border-top: 1px solid #cccccc; */
     background-color: #999999;
-    /* height: 78px; */
 }
 
 .CardRightFooter {
     padding: 10px;
     text-align: center;
     color: #fff;
-    /* height: 78px; */
 }
 
 .box-right button{

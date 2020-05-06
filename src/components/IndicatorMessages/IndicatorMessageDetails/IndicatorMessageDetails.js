@@ -70,6 +70,7 @@ const IndicatorMessageDetails = (props) => {
     }
 }
 
+//method that copies part of the state to the props of this component.
 const mapStateToProps = state => {
     return {
         indicatorMessageData: state.indicatorMessage.messageData,
@@ -77,6 +78,7 @@ const mapStateToProps = state => {
     };
 };
 
+//these functions will be accessible via props in child components
 const mapDispatchToProps = dispatch => {
     return {
         onInitIndicatorMessageDetails: (messageId) =>
