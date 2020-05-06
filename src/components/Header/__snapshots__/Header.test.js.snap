@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Header/> component renders without parent component 1`] = `ShallowWrapper {}`;
-
-exports[`<HomeLayout/> Container renders without parent component 1`] = `ShallowWrapper {}`;
