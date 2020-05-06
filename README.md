@@ -1,7 +1,7 @@
 ## RISKMETHODS_INDICATOR_MESSAGES
-
-### `ABOUT PROJECT`
-This is single page React application thats lists Indicator Messages
+https://rmindicators.herokuapp.com/
+### `ABOUT PROJECT` https://rmindicators.herokuapp.com/
+This is single page React application (https://rmindicators.herokuapp.com/) thats lists Indicator Messages
 and its detailed information that correlates to a risk of a company (in terms of RiskObject) <br/> User will be authenticated using riskmethods credentials <br/> <br/>User will be  able to see 20 Indicator Messages per page after authenticating.
 User from Indicator Messages Page will be able to navigate to a new page
 where user see more details of a Indicator Message.
