@@ -47,4 +47,4 @@ React components read data from a Redux store, and dispatch actions to the store
 - toastr is used for user notifications and messages.
 
 ### `SUPPORTED BROWSERS`
-Application is best viewed in latest chrome browser, please refer to `development` section in package.json for supported browsers. Application is made responsive to support other devices<u>Application is not supported in Internet explorer.</u>
+Application is best viewed in latest chrome browser, please refer to `development` section in package.json for supported browsers. Application is made responsive to support other devices.<u>Application is not supported in Internet explorer.</u>
